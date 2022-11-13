@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  app-frontend:
+    build: ./frontend
+    ports:
+      - "9001:9001"
+    restart: always
+    depends_on:
+      - app-backend
+  app-backend:
+    build: ./backend
+    ports:
+      - "9000:9000"
+    restart: always
